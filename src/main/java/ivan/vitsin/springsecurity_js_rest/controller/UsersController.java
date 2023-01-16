@@ -1,10 +1,10 @@
-package Ivan.Vitsin.springsecurity.controller;
+package ivan.vitsin.springsecurity_js_rest.controller;
 
-import Ivan.Vitsin.springsecurity.model.User;
+import ivan.vitsin.springsecurity_js_rest.model.User;
+import ivan.vitsin.springsecurity_js_rest.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import Ivan.Vitsin.springsecurity.service.UserService;
 
 import java.security.Principal;
 

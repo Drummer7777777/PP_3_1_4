@@ -1,4 +1,4 @@
-package Ivan.Vitsin.springsecurity.model;
+package ivan.vitsin.springsecurity_js_rest.model;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,7 +14,7 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
     // пустой конструктор для спринга
@@ -33,6 +33,7 @@ public class Role implements GrantedAuthority {
         this.id = id;
         this.name = name;
     }
+
     @Override
     public String getAuthority() {
         return name;
@@ -44,7 +45,8 @@ public class Role implements GrantedAuthority {
     }
 
 
-    public String getRoleName(){
-        return name.replace("ROLE_","");
+    public String getRoleName() {
+        return name.replace("ROLE_", "");
     }
 }
+

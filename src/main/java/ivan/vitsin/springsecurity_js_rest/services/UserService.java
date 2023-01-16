@@ -1,6 +1,6 @@
-package Ivan.Vitsin.springsecurity.service;
+package ivan.vitsin.springsecurity_js_rest.services;
 
-import Ivan.Vitsin.springsecurity.model.User;
+import ivan.vitsin.springsecurity_js_rest.model.User;
 
 import java.util.List;
 

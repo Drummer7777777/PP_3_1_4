@@ -1,9 +1,9 @@
-package Ivan.Vitsin.springsecurity.configs;
+package ivan.vitsin.springsecurity_js_rest.configs;
 
-import Ivan.Vitsin.springsecurity.model.Role;
-import Ivan.Vitsin.springsecurity.model.User;
-import Ivan.Vitsin.springsecurity.service.RoleService;
-import Ivan.Vitsin.springsecurity.service.UserService;
+import ivan.vitsin.springsecurity_js_rest.model.Role;
+import ivan.vitsin.springsecurity_js_rest.model.User;
+import ivan.vitsin.springsecurity_js_rest.services.RoleService;
+import ivan.vitsin.springsecurity_js_rest.services.UserService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

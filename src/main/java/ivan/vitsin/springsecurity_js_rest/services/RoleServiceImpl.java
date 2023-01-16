@@ -1,7 +1,7 @@
-package Ivan.Vitsin.springsecurity.service;
+package ivan.vitsin.springsecurity_js_rest.services;
 
-import Ivan.Vitsin.springsecurity.model.Role;
-import Ivan.Vitsin.springsecurity.repositories.RoleRepository;
+import ivan.vitsin.springsecurity_js_rest.model.Role;
+import ivan.vitsin.springsecurity_js_rest.repositories.RoleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

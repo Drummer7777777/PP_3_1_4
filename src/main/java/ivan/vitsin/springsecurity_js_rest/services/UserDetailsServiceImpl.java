@@ -1,7 +1,7 @@
-package Ivan.Vitsin.springsecurity.service;
+package ivan.vitsin.springsecurity_js_rest.services;
 
-import Ivan.Vitsin.springsecurity.model.User;
-import Ivan.Vitsin.springsecurity.repositories.UserRepository;
+import ivan.vitsin.springsecurity_js_rest.model.User;
+import ivan.vitsin.springsecurity_js_rest.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

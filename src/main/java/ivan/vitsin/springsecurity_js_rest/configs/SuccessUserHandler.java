@@ -1,4 +1,4 @@
-package Ivan.Vitsin.springsecurity.configs;
+package ivan.vitsin.springsecurity_js_rest.configs;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;

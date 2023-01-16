@@ -1,10 +1,10 @@
-package Ivan.Vitsin.springsecurity.service;
+package ivan.vitsin.springsecurity_js_rest.services;
 
+import ivan.vitsin.springsecurity_js_rest.model.User;
+import ivan.vitsin.springsecurity_js_rest.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import Ivan.Vitsin.springsecurity.model.User;
-import Ivan.Vitsin.springsecurity.repositories.UserRepository;
 
 import java.util.List;
 

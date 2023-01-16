@@ -1,9 +1,9 @@
-package Ivan.Vitsin.springsecurity.repositories;
+package ivan.vitsin.springsecurity_js_rest.repositories;
 
+import ivan.vitsin.springsecurity_js_rest.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import Ivan.Vitsin.springsecurity.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

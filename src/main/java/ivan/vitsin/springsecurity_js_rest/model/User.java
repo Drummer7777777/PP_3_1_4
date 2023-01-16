@@ -1,8 +1,9 @@
-package Ivan.Vitsin.springsecurity.model;
+package ivan.vitsin.springsecurity_js_rest.model;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.LinkedHashSet;

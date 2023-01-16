@@ -1,6 +1,6 @@
-package Ivan.Vitsin.springsecurity.service;
+package ivan.vitsin.springsecurity_js_rest.services;
 
-import Ivan.Vitsin.springsecurity.model.Role;
+import ivan.vitsin.springsecurity_js_rest.model.Role;
 
 import java.util.List;
 
