@@ -11,8 +11,14 @@ const navBar = document.getElementById('navbar')
 //Заполнение navBar
 principal.then(user => {
     let usersRoles = ''
+    let count = 0;
     user.roles.forEach(role => {
-        usersRoles += role.name.replace('ROLE_', '') + ' '
+        count++
+        if (count == 2) {
+            usersRoles += ' and ' + role.name.replace('ROLE_', '')
+        } else {
+            usersRoles += role.name.replace('ROLE_', '') + ' '
+        }
     })
     navBar.innerHTML = `${user.username} with roles: ${usersRoles}`
 })
