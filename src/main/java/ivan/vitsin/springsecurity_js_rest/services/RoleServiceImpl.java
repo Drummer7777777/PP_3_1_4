@@ -1,5 +1,6 @@
 package ivan.vitsin.springsecurity_js_rest.services;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import ivan.vitsin.springsecurity_js_rest.model.Role;
 import ivan.vitsin.springsecurity_js_rest.repositories.RoleRepository;
 import org.springframework.stereotype.Service;

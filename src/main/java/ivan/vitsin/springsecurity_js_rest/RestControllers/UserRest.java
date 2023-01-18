@@ -31,7 +31,7 @@ public class UserRest {
     User getUser(@PathVariable Long id) {
         User user = userService.findById(id);
         if (user == null) {
-            throw new NoSuchUserException("No user with this ID found");
+            throw new NoSuchUserException("No user with such ID found");
         }
         return user;
     }
@@ -60,7 +60,7 @@ public class UserRest {
     public String deleteUser(@PathVariable long id) {
         User user = userService.findById(id);
         if (user == null) {
-            throw new NoSuchUserException("No user with this ID found");
+            throw new NoSuchUserException("No user with such ID found");
         }
         userService.deleteById(id);
         return "User with ID = " + id + " was deleted!";

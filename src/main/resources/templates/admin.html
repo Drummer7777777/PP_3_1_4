@@ -11,26 +11,26 @@
 <!--шапка админа-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <div th:object="${principalUser}">
-            <a class="navbar-brand"><span th:text="|*{email} wish roles: *{#strings.arrayJoin(getRolesName(), ' ')}|"></span></a>
-        </div>
-        <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="/login?logout">Logout</a>
-        </div>
+        <div><a class="navbar-brand"><span id="navbar">111</span></a></div>
+        <div class="navbar-nav"><a class="nav-link" aria-current="page" href="/login?logout">Logout</a></div>
     </div>
 </nav>
 <!--шапка админа-->
 <div class="row">
     <div class="col-2 pt-3 g-0">
         <!--Боковая панель-->
-        <ul class="nav nav-pills flex-column" >
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" th:href="@{/admin}">Admin</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/user}">User</a>
-            </li>
-        </ul>
+        <div class="align-items-start">
+            <div class="nav flex-column nav-pills" id="leftPanel" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" style="text-align: left" id="btnAdmin" data-bs-toggle="pill"
+                        data-bs-target="#showActiveAdmin" type="button" role="tab" aria-controls="v-pills-admin"
+                        aria-selected="true">Admin
+                </button>
+                <button class="nav-link" style="text-align: left" id="btnUser" data-bs-toggle="pill"
+                        data-bs-target="#showActiveUser" type="button" role="tab" aria-controls="v-pills-user"
+                        aria-selected="false">User
+                </button>
+            </div>
+        </div>
         <!--Боковая панель /-->
     </div>
     <div class="col-10 bg-light d-flex flex-column min-vh-100 d-flex flex-column">
@@ -82,29 +82,7 @@
                                     <th>Delete</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <th:block  th:each="user : ${users}">
-                                    <tr>
-                                        <td th:text="*{user.id}"></td>
-                                        <td th:text="*{user.firstName}"></td>
-                                        <td th:text="*{user.lastName}"></td>
-                                        <td th:text="*{user.age}"></td>
-                                        <td th:text="*{user.email}"></td>
-                                        <td th:text="*{#strings.arrayJoin(user.getRolesName(), ' ')}"></td>
-                                        <td>
-                                            <!-- Button Edit user modal -->
-                                            <button type="button" class="btn btn-info btn-sm text-white"
-                                                    data-bs-toggle="modal"
-                                                    th:attr="data-bs-target='#editUserModal' + ${user.getId()}">Edit</button>
-                                        </td>
-                                        <td>
-                                            <!-- Button Delete modal data-bs-target="#deleteModal" -->
-                                            <button type="button" class="btn btn-danger btn-sm"
-                                                    data-bs-toggle="modal"
-                                                    th:attr="data-bs-target='#deleteModal' + ${user.getId()}">Delete</button>
-                                        </td>
-                                    </tr>
-                                </th:block>
+                                <tbody id="allUsers">
                                 </tbody>
                             </table>
                         </div>
@@ -119,43 +97,40 @@
                         <div class="border bg-body">
                             <div class="mx-auto p-4 text-center fw-bold" style="width: 300px;">
                                 <!--    Форма для   New User   -->
-                                <form action="#" th:action="@{/user-create}" th:object="${user}" method="post">
+                                <form id="formAddUser">
                                     <div class="mb-3">
                                         <label for="firstName" class="label">First name</label>
-                                        <input type="text" th:field="*{firstName}" class="form-control" id="firstName"
+                                        <input type="text" class="form-control" id="firstName"
                                                placeholder="First name" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="lastName" class="label">Last name</label>
-                                        <input type="text" class="form-control" th:field="*{lastName}" id="lastName"
+                                        <input type="text" class="form-control" id="lastName"
                                                placeholder="Last name" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="ade" class="label">Age</label>
-                                        <input type="number" class="form-control" th:field="*{age}" id="ade"
+                                        <label for="age" class="label">Age</label>
+                                        <input type="number" class="form-control" id="age"
                                                placeholder="Age" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="label ">Email address</label>
-                                        <input type="email" class="form-control" name="email" id="email"
+                                        <input type="email" class="form-control" id="email"
                                                aria-describedby="emailHelp" placeholder="Email address" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="label">Password</label>
-                                        <input type="password" class="form-control" name="password"
+                                        <input type="password" class="form-control"
                                                id="password" placeholder="Password" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="roles" class="label">Roles</label>
-                                        <select id="roles" name="roles" multiple="multiple" class="form-select" size="2" aria-label="size 2 select" required>
-                                            <option th:each="role:${roles}"
-                                                    th:name="*{roles}"
-                                                    th:value="${role.id}"
-                                                    th:text="${role.getRoleName()}">
-                                            </option>
+                                        <select id="roles" name="roles" multiple="multiple" class="form-select" size="2"
+                                                aria-label="size 2 select" required>
                                         </select>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-lg">Add new user</button>
+                                    <button id="btnAddUser" type="submit" class="btn btn-success btn-lg">Add new user
+                                    </button>
                                 </form>
                                 <!--   Форма для   New User   /  -->
                             </div>
