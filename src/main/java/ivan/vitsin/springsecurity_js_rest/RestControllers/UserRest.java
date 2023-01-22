@@ -57,7 +57,7 @@ public class UserRest {
     }
 
     @DeleteMapping("/user/{id}")
-    public String deleteUser(@PathVariable long id) {
+    public String deleteUser(@PathVariable Long id) {
         User user = userService.findById(id);
         if (user == null) {
             throw new NoSuchUserException("No user with such ID found");
